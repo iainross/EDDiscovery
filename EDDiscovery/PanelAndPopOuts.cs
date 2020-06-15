@@ -76,6 +76,7 @@ namespace EDDiscovery
             CaptainsLog,            // 41 Actually its important for debugging purposes so you can recognised the ID as its stored by ID in the DB
             Surveyor,               // 42
             EDSM,                   // 43
+            MaterialTrader,         // 44
             // ****** ADD More here DO NOT REORDER *****
         };
 
@@ -107,6 +108,7 @@ namespace EDDiscovery
             { new PanelInfo( PanelIDs.Synthesis, typeof(UserControlSynthesis), "Synthesis", "Synthesis", "Synthesis planner") },
             { new PanelInfo( PanelIDs.Engineering, typeof(UserControlEngineering), "Engineering", "Engineering", "Engineering planner") },
             { new PanelInfo( PanelIDs.ShoppingList, typeof(UserControlShoppingList), "Shopping List", "ShoppingList", "Shopping list planner combining synthesis and engineering") },
+            { new PanelInfo( PanelIDs.MaterialTrader, typeof(UserControlMaterialTrader), "Material Trader", "MaterialTrader", "Material trader") },
 
             { new PanelInfo( "Scans and Stars") },
             { new PanelInfo( PanelIDs.Scan, typeof(UserControlScan), "Scan", "Scan", "Scan data on system", transparent: false) },
@@ -163,7 +165,7 @@ namespace EDDiscovery
         static private List<PanelInfo> userselectablepanellist;   // filled by Init - all panels that the user can select directly
         static private int[] userselectablepanelseperatorlistgroup;    // filled by Init - the seperator group index into userselectablepanellist
 
-        public static IReadOnlyDictionary<PanelIDs, Image> PanelTypeIcons { get; private set; } = new IconGroup<PanelIDs>("Panels");
+        public static IReadOnlyDictionary<PanelIDs, Image> PanelTypeIcons { get; private set; } = new BaseUtils.Icons.IconGroup<PanelIDs>("Panels");
 
         public static void Init()
         {
@@ -196,7 +198,7 @@ namespace EDDiscovery
             displayablepanels = (from x in paneldefinition where x.PopoutID != PanelIDs.GroupMarker select x).ToList(); //remove groups..
             userselectablepanellist = (from x in displayablepanels where x.Description.Length>0 select x).ToList(); //remove non selectables..
 
-            PanelTypeIcons = new IconGroup<PanelIDs>("Panels");
+            PanelTypeIcons = new BaseUtils.Icons.IconGroup<PanelIDs>("Panels");
         }
 
         [System.Diagnostics.DebuggerDisplay("{PopoutID} {WindowTitle}")]

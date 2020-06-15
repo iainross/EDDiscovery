@@ -61,6 +61,39 @@ namespace EDDiscovery.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Program Concept by:
+        ///Cmdr Finwen  (Robert Wahlström)
+        ///
+        ///Developers for this release series:
+        ///Robby (Releaser)
+        ///Bravada Cadelanne, Iain Ross, Andrea Spada, Carcher99
+        ///
+        ///Images Captured by:
+        ///Spandino, Robby, Eahlstan, Ettanin, CompleteNOOB from Frontier Elite Dangerous Images (C) Frontier Developments PLC
+        ///
+        ///Languages Translations:
+        ///Potatossuaro, Zafford, Andrea Spada, Goscickiw, Nats-ji, Jay
+        ///
+        ///Previous Contributors:
+        ///IGAU, EoD, Imathrowback, phwoelfel, Robosa, Daniel-finger, Phroggie, Finwen, Corbin Moran,  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Credits {
+            get {
+                return ResourceManager.GetString("Credits", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EDCD {
+            get {
+                object obj = ResourceManager.GetObject("EDCD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff0\deff0\stshfdbch0\stshfloch31506\stshfhich31506\stshfbi31506\deflang2057\deflangfe2057\themelang2057\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}
         ///{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New [rest of string was truncated]&quot;;.
         /// </summary>
@@ -76,16 +109,6 @@ namespace EDDiscovery.Properties {
         internal static System.Drawing.Icon edlogo_3mo_icon {
             get {
                 object obj = ResourceManager.GetObject("edlogo_3mo_icon", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
-        /// </summary>
-        internal static System.Drawing.Icon GNE {
-            get {
-                object obj = ResourceManager.GetObject("GNE", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -166,6 +189,15 @@ namespace EDDiscovery.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://edcd.github.io/.
+        /// </summary>
+        internal static string URLEDCD {
+            get {
+                return ResourceManager.GetString("URLEDCD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to https://eddb.io/.
         /// </summary>
         internal static string URLeddb {
@@ -220,7 +252,7 @@ namespace EDDiscovery.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://www.edsm.net/dump/systemsWithCoordinates.json.
+        ///   Looks up a localized string similar to https://www.edsm.net/dump/systemsWithCoordinates.json.gz.
         /// </summary>
         internal static string URLEDSMFullSystems {
             get {

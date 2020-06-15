@@ -47,7 +47,7 @@ namespace EDDiscovery.UserControls
 
         public void AddJournalExtraOptions()
         {
-            AddGroupOption("ApproachBody;Docked;FSDJump;Location;Undocked;", "Travel".T(EDTx.FilterSelector_Travel), JournalEntry.JournalTypeIcons[JournalTypeEnum.FSDJump]);
+            AddGroupOption("ApproachBody;Docked;FSDJump;CarrierJump;Location;Undocked;", "Travel".T(EDTx.FilterSelector_Travel), JournalEntry.JournalTypeIcons[JournalTypeEnum.FSDJump]);
 
             AddGroupOption("Scan;Scan Auto;Scan Basic;Scan Nav;NavBeaconScan;SAAScanComplete;FSSAllBodiesFound;FSSSignalDiscovered;FSSDiscoveryScan;DiscoveryScan;SAASignalsFound", "Scan".T(EDTx.FilterSelector_Scan), JournalEntry.JournalTypeIcons[JournalTypeEnum.Scan]);
 
@@ -66,7 +66,7 @@ namespace EDDiscovery.UserControls
 
             var lle = EliteDangerousCore.JournalEntry.GetNameImageOfEvents(new string[] { "Ledger", "LedgerNC" });
             string legtype = string.Join(";", lle.Select(x => x.Item1)) + ";";
-            AddGroupOption(legtype, "Ledger".T(EDTx.FilterSelector_Ledger), EDDiscovery.Icons.IconSet.GetIcon("Panels.Ledger"));
+            AddGroupOption(legtype, "Ledger".T(EDTx.FilterSelector_Ledger), BaseUtils.Icons.IconSet.GetIcon("Panels.Ledger"));
 
             var sle = EliteDangerousCore.JournalEntry.GetNameImageOfEvents(new string[] { "ShipInformation" });
             string shiptype = string.Join(";", sle.Select(x => x.Item1)) + ";";

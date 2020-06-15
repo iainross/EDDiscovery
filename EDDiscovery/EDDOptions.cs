@@ -82,9 +82,13 @@ namespace EDDiscovery
             {
                 SelectLanguage = toeol ? ca.Rest() : ca.NextEmpty();
             }
-            else if (optname == "-webserverfolder" || optname == "-wsf" )
+            else if (optname == "-webserverfolder" || optname == "-wsf")
             {
                 WebServerFolder = toeol ? ca.Rest() : ca.NextEmpty();
+            }
+            else if (optname == "-outputeventhelp")
+            {
+                OutputEventHelp = toeol ? ca.Rest() : ca.NextEmpty();
             }
             else if (optname.StartsWith("-"))
             {
@@ -131,6 +135,8 @@ namespace EDDiscovery
                     case "nolowpriority": LowPriority = false; break;
                     case "backgroundpriority": BackgroundPriority = true; break;
                     case "nobackgroundpriority": BackgroundPriority = false; break;
+                    case "forcetls12": ForceTLS12 = true; break;
+                    case "disabletimedisplay": DisableTimeDisplay = true; break;
                     default:
                         System.Diagnostics.Debug.WriteLine($"Unrecognized option -{opt}");
                         break;
@@ -197,6 +203,9 @@ namespace EDDiscovery
         public string WebServerFolder { get; set; }             // normally empty, so selections zip server
         public bool LowPriority { get; set; }
         public bool BackgroundPriority { get; set; }
+        public bool ForceTLS12 { get; set; }
+        public bool DisableTimeDisplay { get; set; }
+        public string OutputEventHelp { get; set; }
 
         public string SubAppDirectory(string subfolder)     // ensures its there.. name without \ slashes
         {
@@ -232,6 +241,11 @@ namespace EDDiscovery
         #region Implementation
 
         private EDDOptions()
+        {
+            Init();
+        }
+
+        public void ReRead()        // if you've changed the option file .opt then call reread
         {
             Init();
         }

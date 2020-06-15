@@ -177,6 +177,18 @@
     <Compile Include="Actions\ActionControllerKeys.cs" />
     <Compile Include="Actions\ActionControllerVoice.cs" />
     <Compile Include="Translations\EDDiscoveryTranslations.cs" />
+    <Compile Include="UserControls\EngineeringSynthesis\UserControlMaterialTrader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\EngineeringSynthesis\UserControlMaterialTrader.Designer.cs">
+      <DependentUpon>UserControlMaterialTrader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HelpersScanDisplayUC\ScanDisplayNodes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\HelpersScanDisplayUC\ScanDisplayBarycentres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UserControls\Helpers\CSVHelpers.cs" />
     <Compile Include="WebServer\WebServer.cs" />
     <None Include="..\EDDIcons\Controls\Fakes\Controls.Designer.cs">
@@ -192,10 +204,6 @@
     <Compile Include="Actions\ActionsEDDCmds\ActionDLLCall.cs" />
     <Compile Include="Actions\ActionsEDDCmds\ActionBookmarks.cs" />
     <Compile Include="Actions\AudioHelper.cs" />
-    <Compile Include="DLL\EDDDLLHistoryEntry.cs" />
-    <Compile Include="DLL\EDDDLLCaller.cs" />
-    <Compile Include="DLL\EDDDLLManager.cs" />
-    <Compile Include="DLL\EDDInterface.cs" />
     <Compile Include="EDDiscoveryControllerNewEntry.cs" />
     <Compile Include="EDDiscoveryControllerHistory.cs" />
     <Compile Include="EDDiscoveryControllerSync.cs" />
@@ -416,12 +424,6 @@
     <Compile Include="UserControls\Helpers\TargetClassHelpers.cs" />
     <Compile Include="EDDApplicationContext.cs" />
     <Compile Include="EDDiscoveryControllerMain.cs" />
-    <Compile Include="Forms\CommanderForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\CommanderForm.Designer.cs">
-      <DependentUpon>CommanderForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\AddOnManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -637,10 +639,10 @@
     <Compile Include="UserControls\ScansStars\UserControlScan.Designer.cs">
       <DependentUpon>UserControlScan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Helpers\ScanDisplayUserControl.cs">
+    <Compile Include="UserControls\HelpersScanDisplayUC\ScanDisplayUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\Helpers\ScanDisplayUserControl.Designer.cs">
+    <Compile Include="UserControls\HelpersScanDisplayUC\ScanDisplayUserControl.Designer.cs">
       <DependentUpon>ScanDisplayUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ScansStars\UserControlScanGrid.cs">
@@ -706,9 +708,6 @@
     <Compile Include="UserControls\Helpers\StatsTimeUserControl.Designer.cs">
       <DependentUpon>StatsTimeUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Forms\CommanderForm.resx">
-      <DependentUpon>CommanderForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddOnManagerForm.resx">
       <DependentUpon>AddOnManagerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -735,6 +734,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenShots\ScreenShotConfigureForm.resx">
       <DependentUpon>ScreenShotConfigureForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\EngineeringSynthesis\UserControlMaterialTrader.resx">
+      <DependentUpon>UserControlMaterialTrader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Helpers\TagsForm.resx">
       <DependentUpon>TagsForm.cs</DependentUpon>
@@ -862,7 +864,7 @@
     <EmbeddedResource Include="UserControls\ScansStars\UserControlScan.resx">
       <DependentUpon>UserControlScan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\Helpers\ScanDisplayUserControl.resx">
+    <EmbeddedResource Include="UserControls\HelpersScanDisplayUC\ScanDisplayUserControl.resx">
       <DependentUpon>ScanDisplayUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ScansStars\UserControlScanGrid.resx">
@@ -906,6 +908,8 @@
     <None Include="Resources\GNE.ico" />
     <None Include="Resources\Logo.png" />
     <None Include="Resources\mapuc.txt" />
+    <None Include="Resources\Credits.txt" />
+    <None Include="Resources\EDCD.PNG" />
     <Content Include="x86\Microsoft.VC100.CRT\msvcp100.dll" />
     <Content Include="x86\Microsoft.VC100.CRT\msvcr100.dll" />
     <EmbeddedResource Include="Forms\Form2DMap.resx">
@@ -1035,7 +1039,7 @@
       <Project>{646f71be-f102-444e-9254-818e5a320ab8}</Project>
       <Name>EDDIcons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EliteDangerous\EliteDangerous.csproj">
+    <ProjectReference Include="..\EliteDangerousCore\EliteDangerous\EliteDangerous.csproj">
       <Project>{019917a4-7342-4f67-8aaf-9e20c016a935}</Project>
       <Name>EliteDangerous</Name>
     </ProjectReference>
